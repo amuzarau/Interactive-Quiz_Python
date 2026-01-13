@@ -73,9 +73,9 @@ classDiagram
     
 ---
 
-```markdown
-# 📁 File & Class Responsibilities
 
+# 📁 File & Class Responsibilities
+```
 | File / Class | Role |
 |---|---|
 | `pyquiz.py` | Application entry point. Starts the program and displays the menu |
@@ -85,14 +85,14 @@ classDiagram
 | `Quiz` | Presents questions, checks answers, calculates score |
 | `*.xml` | Stores quiz data (questions, choices, correct answers) |
 | `results_*.txt` | Saved quiz results generated after finishing a quiz |
-
+```
 ---
 
 # 🧠 How XML Powers the App
 
 Instead of hard-coding questions, quizzes are stored externally in XML, so you can add/edit quizzes **without changing Python code**.
 
-```xml
+```
 <quiz>
   <question>
     <type>multiple</type>
@@ -104,7 +104,7 @@ Instead of hard-coding questions, quizzes are stored externally in XML, so you c
   </question>
 </quiz>
 
-
+```
 ---
 
 # 🖥️ Running the App
