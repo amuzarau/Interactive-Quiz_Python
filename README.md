@@ -73,22 +73,35 @@ classDiagram
     
 ---
 
-# 📁 File & Class Responsibilities
-File / Class	Role
-pyquiz.py	    Application entry point. Starts the program and displays the menu
-QuizApp	        Controls the user experience (menu, navigation, exit)
-QuizManager	Manages available quizzes and user actions
-QuizParser	Reads XML files and builds Quiz objects
-Quiz	Contains questions, handles user answers, calculates score
-*.xml	Stores all quiz data (questions, options, correct answers)
-*.txt	Stores saved quiz results
+
+Common mistake: using backticks “inside” another code fence, or forgetting the closing ``` after XML.
 
 ---
 
-🧠 How XML Powers the App
+# ✅ Paste-ready FIXED versions of the two sections
 
-Instead of hard-coding questions, quizzes are stored like this:
+Replace your two broken sections with these **exact** blocks (they are GitHub-safe):
 
+```markdown
+## 📁 File & Class Responsibilities
+
+| File / Class | Role |
+|---|---|
+| `pyquiz.py` | Application entry point. Starts the program and displays the menu |
+| `QuizApp` | Controls the user experience (menu, navigation, exit) |
+| `QuizManager` | Manages available quizzes and user actions |
+| `QuizParser` | Reads XML files and builds `Quiz` objects |
+| `Quiz` | Presents questions, checks answers, calculates score |
+| `*.xml` | Stores quiz data (questions, choices, correct answers) |
+| `results_*.txt` | Saved quiz results generated after finishing a quiz |
+
+---
+
+## 🧠 How XML Powers the App
+
+Instead of hard-coding questions, quizzes are stored externally in XML, so you can add/edit quizzes **without changing Python code**.
+
+```xml
 <quiz>
   <question>
     <type>multiple</type>
@@ -100,12 +113,6 @@ Instead of hard-coding questions, quizzes are stored like this:
   </question>
 </quiz>
 
-
-This allows:
-- Teachers to create quizzes
-- No code changes
-- Easy versioning and scaling
-- Data reuse in GUI or web versions later
 
 ---
 
