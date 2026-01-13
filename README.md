@@ -53,7 +53,7 @@ flowchart TD
 ```
 ---
 
-## 🧱 Class Responsibilities
+# 🧱 Class Responsibilities
 
 ```mermaid
 classDiagram
@@ -73,13 +73,8 @@ classDiagram
     
 ---
 
-
-Common mistake: using backticks “inside” another code fence, or forgetting the closing ``` after XML.
-
----
-
 ```markdown
-## 📁 File & Class Responsibilities
+# 📁 File & Class Responsibilities
 
 | File / Class | Role |
 |---|---|
@@ -93,7 +88,7 @@ Common mistake: using backticks “inside” another code fence, or forgetting t
 
 ---
 
-## 🧠 How XML Powers the App
+# 🧠 How XML Powers the App
 
 Instead of hard-coding questions, quizzes are stored externally in XML, so you can add/edit quizzes **without changing Python code**.
 
