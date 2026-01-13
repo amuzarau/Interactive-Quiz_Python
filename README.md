@@ -1,28 +1,53 @@
-# Interactive-Quiz
-This is my educational project, based on Joe Marini LinkedIn course
+# 🧠 Interactive Quiz  
+**Python • Object-Oriented Design • XML Data Storage**
 
-This app is quiz-taking program. The program will run in the terminal and present the user with a menu to control the app. The user can list available quizzes, select the quiz, answer the questions, then see the results and save them to txt-file. The quizzes themselves will be defined using XML – structured data  format, which means we can create and edit quizzes without having to change the code of the app. 
+An interactive **terminal-based quiz application** built with Python using **Object-Oriented Programming (OOP)** and **XML-driven data**.  
+The system allows users to take quizzes, track their results, and save outcomes in .txt format — while allowing new quizzes to be added **without changing the code**.
 
-First, to run app, you have to right-click on pyquiz.py file and run application in terminal. When you open the quiz, there is simple start-up  greeting and you are prompted for your name. You put your name in, and then you can see,  that program prints out the menu of options:
+This project is based on the Joe Marini LinkedIn Learning course and extended as an educational OOP + data-driven architecture example.
 
-(M): Repeat this menu
-(L): List quizzes
-(T): Take a quiz
-(E): Exit program
+---
 
-You can repeat this menu, list the quizzes that are installed, take the quiz or exit the program.
-In quizzes, there are two types of questions:  multiple choice – questions and True / False – questions.
+# 🚀 Key Features
 
-After you’ve completed the quiz, you get  your  results, including current date and time, how many questions were in test and how many questions you have answered correctly and total score out of possible one.  After that, you are prompted to save your results in separate txt-file, which you can find  later  in the  program files folder
+- 📚 List all available quizzes  
+- 📝 Take quizzes with **Multiple-Choice** and **True/False** questions  
+- 📊 Automatically calculate score and statistics  
+- 💾 Save quiz results to a `.txt` file  
+- 📦 Add new quizzes simply by editing XML files  
+- 🧩 Fully object-oriented architecture  
 
-In this app, following higher-level features are realized: 
-1. New quizzes can be added without changing code
-2. Quiz results (score, number of correct questions, etc.) are tracked and presented to the user
-3. Quiz results can be saved in a file.  
+---
 
-Application architecture is realized with help of classes (Object-Oriented Programming), which will help to keep its code  maintainable and extensible: 
+# 🧠 Project Advantages
 
-1. The main Quiz App class will be responsible for presenting and controlling the user experience of the app. It will handle the menu selections  and instantiate Quiz Manager class. 
+This project demonstrates **real-world backend architecture** principles:
 
-2. The Quiz Manager class will be responsible for managing the installed quizzes in the app. It will coordinate user actions in the main app class and installed quizzes. It will also create QuizParser class, which will handle the process of taking XML-file and building Quiz object from it. Each Quiz object will consist of a series of questions and answers. The Quiz class will also be responsible for presenting its own questions  and checking for correct answers each time. Each Quiz object, created by the parser, will be presented to the user by Quiz Manager 
+| Concept | How It Is Used |
+|--------|----------------|
+| **OOP (Object-Oriented Programming)** | Quiz logic, parsing, and UI control are encapsulated in classes |
+| **XML as Data Layer** | Questions are stored externally and parsed at runtime |
+| **Separation of Concerns** | UI, quiz logic, and data parsing are fully separated |
+| **Extensibility** | New quizzes can be added without touching Python code |
+| **Testable Architecture** | Classes are isolated and reusable |
 
+This is exactly how professional applications separate **data**, **logic**, and **presentation**.
+
+---
+
+# 🧩 Application Architecture
+
+```mermaid
+flowchart TD
+    A[User runs pyquiz.py] --> B[QuizApp]
+    B --> C[QuizManager]
+    C --> D[QuizParser]
+    D --> E[XML Quiz Files]
+    E --> D
+    D --> F[Quiz Objects]
+    F --> C
+    C --> G[Run Quiz]
+    G --> H[User Answers]
+    H --> I[Score & Results]
+    I --> J[Save to TXT File]
+```
