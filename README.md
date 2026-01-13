@@ -118,18 +118,21 @@ Enter your name
 Use the menu:
 
 (M) Repeat menu
+
 (L) List quizzes
+
 (T) Take a quiz
+
 (E) Exit
 
 
 After finishing a quiz, you will see:
 
-Date & time
-Number of questions
-Correct answers
-Total score
-You can then save it as a .txt file.
+- Date & time
+- Number of questions
+- Correct answers
+- Total score
+- You can then save it as a .txt file.
 
 ---
 
