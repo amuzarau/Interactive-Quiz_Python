@@ -51,3 +51,106 @@ flowchart TD
     H --> I[Score & Results]
     I --> J[Save to TXT File]
 ```
+---
+
+# 🧱 Class Responsibilities
+classDiagram
+    class QuizApp {
+        +start()
+        +show_menu()
+        +handle_user_input()
+    }
+
+    class QuizManager {
+        +list_quizzes()
+        +load_quiz()
+        +run_quiz()
+    }
+
+    class QuizParser {
+        +parse_xml()
+        +build_quiz()
+    }
+
+    class Quiz {
+        +questions
+        +ask_questions()
+        +check_answers()
+        +get_score()
+    }
+
+    QuizApp --> QuizManager
+    QuizManager --> QuizParser
+    QuizParser --> Quiz
+    
+---
+
+# 📁 File & Class Responsibilities
+File / Class	Role
+pyquiz.py	Application entry point. Starts the program and displays the menu
+QuizApp	Controls the user experience (menu, navigation, exit)
+QuizManager	Manages available quizzes and user actions
+QuizParser	Reads XML files and builds Quiz objects
+Quiz	Contains questions, handles user answers, calculates score
+*.xml	Stores all quiz data (questions, options, correct answers)
+*.txt	Stores saved quiz results
+
+---
+
+🧠 How XML Powers the App
+
+Instead of hard-coding questions, quizzes are stored like this:
+
+<quiz>
+  <question>
+    <type>multiple</type>
+    <text>What does OOP stand for?</text>
+    <choice>A) Only One Program</choice>
+    <choice>B) Object Oriented Programming</choice>
+    <choice>C) Open Office Protocol</choice>
+    <answer>B</answer>
+  </question>
+</quiz>
+
+
+This allows:
+- Teachers to create quizzes
+- No code changes
+- Easy versioning and scaling
+- Data reuse in GUI or web versions later
+
+---
+
+# 🖥️ Running the App
+
+Right-click pyquiz.py
+
+Run in terminal
+
+Enter your name
+
+Use the menu:
+
+(M) Repeat menu
+(L) List quizzes
+(T) Take a quiz
+(E) Exit
+
+
+After finishing a quiz, you will see:
+
+Date & time
+Number of questions
+Correct answers
+Total score
+You can then save it as a .txt file.
+
+---
+
+# 📈 Future Upgrades
+
+- Web or GUI interface (FastAPI / Tkinter)
+- Question categories
+- User profiles
+- Leaderboards
+- JSON support
