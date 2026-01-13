@@ -92,6 +92,7 @@ classDiagram
 Instead of hard-coding questions, quizzes are stored externally in XML, so you can add/edit quizzes **without changing Python code**.
 
 
+```xml
 <quiz>
   <question>
     <type>multiple</type>
@@ -102,7 +103,7 @@ Instead of hard-coding questions, quizzes are stored externally in XML, so you c
     <answer>B</answer>
   </question>
 </quiz>
-
+```
 
 ---
 
