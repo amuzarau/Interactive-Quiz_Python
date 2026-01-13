@@ -53,42 +53,30 @@ flowchart TD
 ```
 ---
 
-# 🧱 Class Responsibilities
+## 🧱 Class Responsibilities
+
+```mermaid
 classDiagram
-    class QuizApp {
-        +start()
-        +show_menu()
-        +handle_user_input()
-    }
+    direction LR
 
-    class QuizManager {
-        +list_quizzes()
-        +load_quiz()
-        +run_quiz()
-    }
+    class QuizApp
+    class QuizManager
+    class QuizParser
+    class Quiz
+    class Question
 
-    class QuizParser {
-        +parse_xml()
-        +build_quiz()
-    }
-
-    class Quiz {
-        +questions
-        +ask_questions()
-        +check_answers()
-        +get_score()
-    }
-
-    QuizApp --> QuizManager
-    QuizManager --> QuizParser
-    QuizParser --> Quiz
+    QuizApp --> QuizManager : controls
+    QuizManager --> QuizParser : loads/parses
+    QuizParser --> Quiz : builds
+    Quiz "1" o-- "*" Question : contains
+```
     
 ---
 
 # 📁 File & Class Responsibilities
 File / Class	Role
-pyquiz.py	Application entry point. Starts the program and displays the menu
-QuizApp	Controls the user experience (menu, navigation, exit)
+pyquiz.py	    Application entry point. Starts the program and displays the menu
+QuizApp	        Controls the user experience (menu, navigation, exit)
 QuizManager	Manages available quizzes and user actions
 QuizParser	Reads XML files and builds Quiz objects
 Quiz	Contains questions, handles user answers, calculates score
