@@ -78,10 +78,6 @@ Common mistake: using backticks “inside” another code fence, or forgetting t
 
 ---
 
-# ✅ Paste-ready FIXED versions of the two sections
-
-Replace your two broken sections with these **exact** blocks (they are GitHub-safe):
-
 ```markdown
 ## 📁 File & Class Responsibilities
 
